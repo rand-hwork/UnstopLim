@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnstopLim</title>
+    <link rel="shortcut icon" href="aseets/img/logo8.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="css/app.css">
+    <script defer src="js/app.js"></script>
+
+</head>
+<body >
+    
+    <header class="header">
+        <h1 class="header__h1">
+            <a class="header__a" href="index.html" title="Logo">
+                <img src="aseets/img/logo8.png" alt="Logo" class="header__img" loading="lazy">
+            </a>
+        </h1>
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li class="header__li">
+                    <a href="index.html" class="header__a active" title="Inicio">Inicio</a>
+                </li>
+                <li class="header__li">
+                    <a href="html/Fundamentals.html" class="header__a" title="Fundamentos teoricos">Fundamentos teoricos</a>
+                </li>
+                <li class="header__li">
+                    <a class="header__a" href="html/About.html" title="Acerca de Nosotros">Acerca de Nosotros</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main" >
+        <div class="selection">
+            <select class="selection__select">
+                <option class="selection__option" value="Criterio maximin">Criterio maximax</option>
+                <option class="selection__option" value="Criterio miaximax">Criterio maximin</option>
+                <option class="selection__option" value="Criterio minimax">Criterio minimax</option>
+                <option class="selection__option" value="Criterio de harvicz">Criterio de harvicz</option>
+                <option class="selection__option" value="Criterio de laplace">Criterio de laplace</option>
+            </select>
+        </div>
+
+        <ul class="cont" id="screens">
+            <li class="cont__maximax" id="contMaxMax" >
+                <h2 class="cont__h2"><b>Criterio maximax</b></h2>
+                <div class="cont_content" >
+                    <label class="cont_lbl" for="elemento1">Filas:</label>
+                    <input class="cont_input" id="elemento1" type="number" min="1">
+                    <label class="cont_lbl" for="elemento2">Columnas:</label>
+                    <input class="cont_input" id="elemento2" type="number" min="1">
+                    <input class="cont_btn" id="buttonMaxMax" value="Enviar Datos">
+                </div>
+                <div>
+                    <div class="cont_elem1" id="contenido">
+                    </div>
+                    <div class="cont_elem2" id="resultado">
+                    </div>
+                    <div class="cont_elem3" id="descripcion"></div>
+                </div>
+            </li>
+
+            <li class="cont__maximin">
+                <div>
+                    <h2 class="cont__h2"><b>Criterio maximin</b></h2>
+                    <label class="cont_lbl" for="filas">Filas:</label> <br>
+                    <input class="cont_input" type="number" id="filas" > <br>
+                    <label class="cont_lbl" for="columnas" id="2">Columnas:</label> <br>
+                    <input class="cont_input" type="number" id="columnas"> <br><br>
+                    
+                    <input  class="cont_btn" id="buttonGenerar" value="Generar"><br><br>
+                
+                    <div id="contenedorMaxmin" >
+                    </div><br><br>
+                    <input id="res" class="cont_resolver" value="Resolver"><br><br>
+                </div>
+            
+                <div class="cont_elem2">
+                    <div id="contenedor2" >
+                    </div><br><br>
+                    <div id="imagen" >
+                    </div><br><br>
+                    <div id="contenedor3" >
+                    </div><br><br>
+                
+                </div><br  ><br>
+                <label id="respuesta"></label>
+            
+            </li>
+            <li class="cont__minimax">
+                <div>
+                    <h1>Metodo Minimax</h1>
+                    <label for="filas">Filas</label><br>
+                    <input type="number" id="numfilas" min="1" value="1">
+                    <br><br>
+                    <label for="columna">Columna</label><br>
+                    <input type="number" id="numcolumnas" min="1" value="1">
+                    <br><br>
+                    <button id="buttonTabla"> generar tabla</button>
+                    <br>
+            
+                </div>
+            
+                <hr/>
+                <h2>Generando la matriz</h2><br>
+                <div id="contenedorTabla" ></div><br>
+                <div id="vector"></div><br>
+                <div ><button class="buttonIngreso" >Caso ingresos </button></div>
+                <br><div ><button class="buttonCostos" >Caso Costos </button></div>
+                <br>
+                <br>
+                <div id="agarrar" ></div><br>
+                <div id="agarrar2" ></div><br>
+                <div id="agarrar3" ></div><br>
+            </li> 
+            <li class="cont__harvicz">
+                <div>
+                    <h1><b>HARVICZ</b></h1>
+                <label for=""> FILAS </label> <br>
+                <input type="number" id="filas1" > <br>
+                <label for=""> COLUMNAS</label> <br>
+                <input type="number" id="columnas1"> <br><br>
+                <label for="">COEFICIENTE DE OPTIMISMO</label> <br>
+                <input type="number" id="coeficiente"> <br><br>
+            
+            
+                
+                <button  class="button" id="generar22" ">GENERAR MATRIZ</button><br><br>
+                
+                <div id="contenedorT1" ></div><br><br>
+                <button id="res_ganancias" class="button">RESOLVER POR GANANCIAS</button><br><br>
+                <button id="res_costos" class="button">RESOLVER POR COSTOS</button><br><br>
+                </div>
+            
+            
+                <div style="display: flex; margin:0 10px; justify-content: center; text-align: center; align-items: center;">
+                <div id="contenedor22" ></div><br><br>
+                <div id="imagen1" ></div><br><br>
+                <label for="" id="coeficiente1"></label>
+                <div id="contenedor4" ></div><br><br>
+                <label for="" id="coeficiente2"></label>
+                <div id="contenedor33" ></div><br><br>
+                <div id="imagen22" ></div><br><br>
+                <div id="contenedor5"></div>
+                
+                </div><br  ><br>
+                <label id="respuesta1" style="text-align: center; "  ></label>
+            </li>
+            <li class="cont__laplace">
+                <div>
+                    <h1>Criterio de Laplace</h1>
+                    <label for="filasNew">Filas</label><br>
+                    <input type="number" id="filasNew" min="1" value="1">
+                    <br><br>
+                    <label for="columnaNew">Columna</label><br>
+                    <input type="number" id="columnaNew" min="1" value="1">
+                    <br><br>
+                    <button class="buttonCrear">generar tabla</button>
+                    <br>
+            
+                </div>
+            
+                <hr/>
+                <h2>Generando la matriz</h2><br>
+                <div id="contenedorTablaNew" ></div><br>
+                <div id="vectorNew"></div><br>
+                <div ><button class="buttonResolverIngresos">Resolver </button></div>
+                
+                <br>
+                <br>
+                <div id="agarrarNew" ></div><br>
+                <div id="agarrar2New" ></div><br>
+                <div id="agarrar3New" ></div><br>
+            </li>
+        </ul>
+
+        <section class="historia">
+            <ul class="historia__ul">
+                <li class="historia__li">
+                    <h2 class="historia__h2">Tomando Decisiones Bajo Incertidumbre en investigacion operativa</h2>
+                    <p class="historia__p">La Investigación Operativa, también conocida como Investigación de Operaciones, es un campo que combina las matemáticas, la estadística y la toma de decisiones para resolver problemas complejos en la vida real. ¿Alguna vez te has preguntado cómo las grandes empresas optimizan sus operaciones, cómo las aerolíneas programan sus vuelos o cómo los hospitales gestionan sus recursos para brindar atención médica eficiente? La respuesta está en la Investigación Operativa.</p>
+                </li>
+                <li class="historia__li">
+                    <h2 class="historia__h2">¿Qué es la Investigación Operativa?</h2>
+                    <p class="historia__p"><strong>La Investigación Operativa es una disciplina que utiliza modelos matemáticos y técnicas estadísticas para abordar problemas complejos de toma de decisiones</strong> en situaciones empresariales y organizacionales. Su objetivo principal es encontrar soluciones óptimas o cercanas a la óptima que permitan tomar decisiones informadas y eficientes.</p>
+                </li>
+                <li class="historia__li">
+                    <h2 class="historia__h2">Toma de Decisiones Bajo Incertidumbre</h2>
+                    <p class="historia__p">Uno de los desafíos más fundamentales de la Investigación Operativa es la toma de decisiones bajo condiciones de incertidumbre. En el mundo real, rara vez tenemos la certeza absoluta de predecir un hecho futuro. La incertidumbre es una constante, y la Investigación Operativa brinda las herramientas para abordarla de manera inteligente.</p>
+                </li>
+                <li class="historia__li">
+                    <h2 class="historia__h2">Aplicaciones en la Vida Real</h2>
+                    <p class="historia__p">Desde la logística y la gestión de la cadena de suministro hasta la planificación financiera y la atención médica, la Investigación Operativa tiene un impacto profundo en una amplia variedad de industrias. En esta página web, se presenta una calculadora con la capacidad de resolver ejercicios acerca de las condiciones bajo incertidumbre.</p>
+                </li>
+                
+                
+            </ul>
+        </section>
+
+
+        
+    </main>
+
+    <footer class="footer">
+        <p class="footer__p">&copy; 2023 UnstopLim. Todos los derechos reservados.</p>
+    </footer>
+
+    <script  type="module" src="js/laplace.js"></script>
+    <script  type="module" src="js/harvicz.js"></script>
+    <script  type="module" src="js/minimax.js"></script>
+    <script  type="module" src="js/maxmin.js"></script>
+    <script  type="module" src="js/maximax.js"></script>
+   
+    
+</body>
+</html>

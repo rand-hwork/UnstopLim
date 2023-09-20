@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnstopLim</title>
+    <link rel="shortcut icon" href="../aseets/img/logo8.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/fundamentals.css">
+
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__h1">
+            <a class="header__a" href="../index.html" title="Logo">
+                <img src="../aseets/img/logo8.png" alt="Logo" class="header__img" loading="lazy">
+            </a>
+        </h1>
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li class="header__li">
+                    <a href="../index.html" class="header__a" title="Inicio">Inicio</a>
+                </li>
+                <li class="header__li">
+                    <a href="Fundamentals.html" class="header__a active" title="Fundamentos teoricos">Fundamentos teoricos</a>
+                </li>
+                <li class="header__li">
+                    <a class="header__a" href="About.html" title="Acerca de Nosotros">Acerca de Nosotros</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <article class="article">        
+            <h1 class="article__h1">Fundamentos Teóricos</h1>
+            <h3 class="article__h3">Decisiones bajo incertidumbre</h3>
+                <ul class="article__ul">
+                    <li class="article__li"><a class="article__a" href="#maxmin">Maximin</a></li>
+                    <li class="article__li"><a class="article__a" href="#maxmax">Maximax</a></li>
+                    <li class="article__li"><a class="article__a" href="#minmax">Minmax</a></li>
+                    <li class="article__li"><a class="article__a" href="#hurvicz">Hurwicz</a></li>
+                    <li class="article__li"><a class="article__a" href="#laplace">Laplace</a></li>
+                </ul>
+        </article>
+
+        <article class="article">
+            <h2 class="article__h2" id="maxmin">Maximin</h2>
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/Captura de pantalla 2023-09-17 194849.png">
+            </div>
+            
+            <p class="article__p" >Fue propuesto por Abraham Wald, un notable matemático
+                húngaro, nacido en 1902. Doctorado en la Universidad de Viena tuvo que trasladarse a los
+                Estados Unidos por su origen judío en la década de los 30, trabajando durante la Segunda
+                Guerra Mundial para el Grupo de Investigación Estadística (SRG) del Ejército de los Estados
+                Unidos.
+            </p>
+            <p class="article__p" >Este criterio se lo conoce también con el nombre “del mal perdedor”, porque escoge lo
+                    mejor de lo peor, es decir, elige una alternativa cuya peor consecuencia sea tan buena como
+                    la peor consecuencia de cada alternativa.
+                    Supone que la naturaleza es malevolente y consecuentemente debe elegirse el menor valor
+                    de cada alternativa y de estos valores el mayor de ellos. Para el ejemplo planteado, se
+                    escoge la segunda alternativa, puesto que es el mayor valor entre 30,75 y 50 que
+                    corresponden a los menores de cada fila o alternativa planteada.
+            </p>
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/Captura de pantalla 2023-09-17 195022.png" alt="error">
+            </div>
+            <p class="article__p" >En términos matemáticos se expresa como max { min ( vi,j ) }ai j</p>
+            <p class="article__p" >En ocasiones, el criterio de Wald puede conducir a decisiones poco adecuadas. Por ejemplo,
+                considérese la siguiente tabla de decisión, en la que se muestran los niveles de seguridad de
+                las diferentes alternativas.
+            </p>
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/Captura de pantalla 2023-09-17 195506.png" alt="error">
+            </div>
+        </article>
+                                           
+                    
+        <article class="article">
+            <h2 class="article__h2" id="maxmax">Maximax</h2>
+            <p class="article__p" >Es un criterio “super” optimista, por ello, que también se lo
+             conoce como “ el mundo me sonríe “ propio de decisionistas temerarios. Se escogen por fila
+             los mayores valores y de ellos, el mayor. En el ejemplo debe escogerse la alternativa tercera,
+             según se observa a continuación en el vector Si.</p>  
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/Captura de pantalla 2023-09-17 195812.png" alt="imagen"> 
+            </div>
+            <p class="article__p">El planteamiento matemático se expresa como max { max ( vi,j ) }</p>
+        </article>
+    
+        <article class="article">
+            <h2 class="article__h2" id="minmax">Minimax</h2>
+            <p class="article__p" >Desarrollado por Leonard Jimmie Savage, conocido también en
+            inglés como “Minimax regret” (minimax del arrepentimiento) y se basa en la ocurrencia
+            posterior como consecuencia de acciones a priori.
+            </p>     
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/Captura de pantalla 2023-09-17 200350.png" alt="error">
+            </div>   
+    
+            <p class="article__p" >Este criterio inicialmente requiere de la construcción de una matriz de pesar o deploración y
+                posteriormente la aplicación del criterio minimax para elegir una estrategia. La matriz de
+                pesar o arrepentimiento reemplaza los vi,j por ri,j, que se define como:</p>
+            <p class="article__p">max {vi,j } – vi,j , si v es beneficio.</p>
+            <p class="article__p">ri,j =</p>
+            <p class="article__p">vi,j - min { vi,j }, si v es pérdida.</p>
+            <p class="article__p">Para el ejemplo, se construye la matriz de deploración con la primera alternativa, puesto que
+                los elementos de la matriz de pago son de beneficio. Sea la matriz</p>    
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/Captura de pantalla 2023-09-17 200730.png" alt="error">
+            </div>
+    
+            <p class="article__p" style="text-align: center;">Entonces la matriz de deploración se construye restando los vij con los mayores valores de
+            cada columna. De esta matriz, se determinan los mayores valores por fila, generándose el
+            vector Si de resultados.</p>
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/Captura de pantalla 2023-09-17 200924.png" alt="error">
+            </div>
+
+            <p class="article__p" style="text-align: center;">Aplicando el concepto del minimax, entonces la mejor alternativa a seguir es la tercera.</p>
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/laplace3.png" alt="error">
+            </div>
+        </article>
+    
+        <article class="article">
+            <h2 class="article__h2" id="hurvicz">Hurvicz</h2>
+            <p class="article__p">Criterio de Hurwicz. Fue desarrollado por Leonid Hurwicz, matemático y economista
+                de origen polaco, nacionalizado en los Estados Unidos. Fue profesor emérito de la
+                Universidad de Minnesota, uno de los primeros matemáticos economistas en reconocer el
+                valor de la Teoría de Juegos y pionero en su aplicación. Por sus estudios sobre el mecanismo
+                óptimo para alcanzar al mismo tiempo objetivos diferentes, como el bienestar social y
+                ganancias privadas, fue laureado con el Premio del Banco de Suecia en Ciencias Económicas
+                en memoria de Alfred Nobel en 2007 junto con los economistas Eric S. Maskin y Roger B.
+                Myerson.
+            </p>
+            <div class="article__div">
+                <img class="article__img" src="https://th.bing.com/th/id/R.5938387bc0790e56225c32afc7d5482e?rik=nOj1yFcsFQz%2bGw&riu=http%3a%2f%2f5b0988e595225.cdn.sohucs.com%2fimages%2f20181009%2fefc72a41cbcd4a1785f65da00979db34.jpeg&ehk=wQYY8eltnnUCOjvUbwjzfoT4EFsQi12x%2bbcC8uhTj7s%3d&risl=&pid=ImgRaw&r=0" alt="error">
+            </div>
+            <p class="article__p">El criterio establece un equilibrio entre los criterios maxmax y maxmin, es decir entre el
+                optimisma y el pesimista extremos. Para ello, introduce un coeficiente de optimismo  que
+                es evaluado por el decisionista en función de su estado de ánimo entre valores de [0,1], de
+                acuerdo a las siguientes relaciones
+            </p>
+            <p class="article__p">max {  max vi,j + ( 1 -  ) min vi,j } Cuando se representa beneficio.</p>
+            <p class="article__p"> min {  min vi,j + ( 1 -  ) max vi,j } Cuando se representa costo.</p>
+            <p class="article__p">Si  = 1, entonces el criterio es en extremo optimista; si  = 0, el decisionista toma un
+                criterio demasiado pesimista.
+            </p>
+    
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/laplace1.png" alt="error">
+            </div>
+            <p class="article__p">Para desarrollar este criterio, se obtienen los máximos y mínimos valores por alternativa,
+                aplicándolos de acuerdo al coeficiente de optimismo  del decisionista. Para determinar la
+                alternativa a seguir en el ejemplo, se tomará un coeficiente  = ½ y la primera relación por
+                tratarse de beneficio.</p>
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/laplace2.png"error">
+            </div>
+        </article>
+    
+        <article class="article">
+            <h2 class="article__h2" id="laplace">Laplace</h2>
+            <p class="article__p">Laplace también trabajó en la Teoría de la Probabilidad, y en particular dedujo el
+                método de los mínimos cuadrados. Su "Théorie Analitique des Probabilités" se publicó en
+                1812, bajo el auspicio de Napoleón Bonaparte. El concepto aplicado para la determinación de la mejor alternativa, es el valor esperado y
+                para ello, debe multiplicarse cada elemento de la fila por su probabilidad asociada. La
+                expresión matemática para este criterio se formula en los siguientes términos.</p>
+            <p class="article__p">máx {  1/n x vi,j } En caso de ganancia.
+                i j=1
+            </p>
+            <p class="article__p">Donde p = 1/n.
+                n = número de columnas</p>
+            <p class="article__p">Para el ejemplo que se sigue, el valor máximo esperado se calcula de la siguiente manera:
+                p = 1/n = 1/3
+            </p>
+            <p class="article__p">E(G) = 1/3 x 30 + 1/3 x 550 + 1/3 x 200 = 260  Alternativa</p>
+            <p class="article__p">E(G) = 1/3 x 75 + 1/3 x 100 + 1/3 x 500 = 225</p>
+            <p class="article__p">E(G) = 1/3 x 600 + 1/3 x 50 + 1/3 x 75 = 241,67</p>
+            <div class="article__div">
+                <img class="article__img" src="../aseets/img/laplace3.png" alt="error">
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+        <p class="footer__p">&copy; 2023 UnstopLim. Todos los derechos reservados.</p>
+    </footer>
+
+</div>
+
+
+</body>
+</html>
